@@ -43,7 +43,7 @@ public abstract class BoardGame {
 
 // Nested Enumerator for the abstract method
 enum GameType {
-    STRATEGY("Module1.Strategy"), FAMILY("Module1.Family");
+    STRATEGY("Strategy"), FAMILY("Family");
     private final String name;
 
     GameType(String name) {
@@ -64,10 +64,6 @@ class Strategy extends BoardGame {
 
     // Default Constructor
     public Strategy() {
-/*      super.getGameName(); -- Unnecessary
-        super.getPlayers();
-        super.getPlayTimeMin();
-        super.getRecAge();*/
         this.type    = GameType.STRATEGY;
         this.rankBGG = 0;
     }
@@ -105,8 +101,6 @@ class Family extends BoardGame {
 
     // Default Constructor
     public Family() {
-/*      super(); -- Unnecessary
-        super.getClass();*/
         this.type    = GameType.FAMILY;
         this.rankBGG = 0;
     }
@@ -148,5 +142,8 @@ class Main {
         System.out.println(f);
         System.out.println(tfMars);
         System.out.println(azul);
+
+        BoardGame fFOdin = new Strategy("Feast for Odin", 4, 120, 12, 22);
+        System.out.println(fFOdin);
     }
 }
